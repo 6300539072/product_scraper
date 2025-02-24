@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
 //   const { name,price,description,ratings} = req.body; 
-const  url  = req.body
+const  url  = req.body.url
 // const  url  = "https://www.amazon.com/s?k=kitchen+and+dining&rh=p_36%3A-5000&s=date-desc-rank&_encoding=UTF8&content-id=amzn1.sym.82545daf-9a90-4f78-b3cc-f9f3e191c9ad&pd_rd_r=e1264c14-0663-4826-bf38-96254022862e&pd_rd_w=Oa3jH&pd_rd_wg=0ZVcA&pf_rd_p=82545daf-9a90-4f78-b3cc-f9f3e191c9ad&pf_rd_r=844Y1KAN37N2XC71A6GD&ref=pd_hp_d_atf_unk"
   console.log( "reqBody",url)
 //   const url = "https://www.amazon.com/"
@@ -50,7 +50,7 @@ router.get('/:id', async (req, res) => {
     try {
       
       const products = await Product.findById(id)
-      console.log("product",product)
+      console.log("product",products)
 
       res.status(200).json(products)
     } catch (error) {
